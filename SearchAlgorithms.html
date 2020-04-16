@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Search Visualizer</title>
+  <style>
+    .border {
+      border: 5px solid;
+    }
+  </style>
+</head>
+
+<body class="text-center" onload="initArray()">
+  <div class="container-fluid d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <h1>Algorithm Visualizer</h1>
+    </header>
+    <form id="UserInput">
+      <div class="form-row">
+        <div class="col">
+          <input id="SearchItem" type="number" class="form-control" placeholder="Enter search value" required>
+        </div>
+        <div class="col">
+          <select id="Algo" class="form-control" required>
+            <option>Linear Search</option>
+            <option>Binary Search</option>
+          </select>
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-block btn-primary">Start search</button>
+        </div>
+        <div class="col">
+          <button type="reset" class="btn btn-block btn-primary">Reset</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-block btn-primary" onclick="initArray();">Randomize dataset</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    <div class="form-row">
+      <div class="col row">
+        <strong class="col-8">Searching element</strong>
+        <div id="SearchingItem" class="col-4" style="border: 1px solid"></div>
+      </div>
+
+      <div class="col row">
+        <strong class="col-8">Item index</strong>
+        <div id="ItemIndex" class="col-4" style="border: 1px solid"></div>
+      </div>
+      <div class="col row">
+        <strong class="col-8">Result</strong>
+        <div id="Result" class="col-4" style="border: 1px solid"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <h6 class="col-1">
+        Elements:
+      </h6>
+      <div id="ArrayElements" class="col-11 row">
+      </div>
+    </div>
+    <div class="row">
+      <h6 class="col-1">
+        Indices:
+      </h6>
+      <div id="ArrayIndexes" class="col-11 row">
+      </div>
+    </div>
+    <div class="row">
+      <h6 class="col-1"></h6>
+      <div id="Arrows" class="col-11 row">
+      </div>
+    </div>
+    <div class="row">
+      <h6 class="col-1">
+        Iteration:
+      </h6>
+      <div id="Iterations" class="col-11 row">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="LinearDesc" class="row" style="display: none;">
+      <div class="col-4 card">
+        <h5 class="card-header">Code</h5>
+        <img class="card-body" src="./images/LinearSearch.PNG">
+      </div>
+    </div>
+    <div id="BinaryDesc" class="row" style="display: none;">
+      <div class="col-5 card">
+        <h5 class="card-header">Code</h5>
+        <img class="card-body" src="./images/BinarySearch.PNG">
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="./js/SearchAlgorithms.js"></script>
+</body>
+
+</html>
