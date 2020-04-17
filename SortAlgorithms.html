@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Sort Visualizer</title>
+    <style>
+        .border {
+            border: 5px solid;
+        }
+
+        .progress {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+
+<body class="text-center" onload="initArray()">
+    <div class="container-fluid d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <h1>Algorithm Visualizer</h1>
+        </header>
+        <form id="UserInput">
+            <div class="form-row">
+                <div class="col">
+                    <select id="Algo" class="form-control" required>
+                        <option>Bubble sort</option>
+                        <option>Selection sort</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-block btn-primary">Start</button>
+                </div>
+                <div class="col">
+                    <button type="reset" class="btn btn-block btn-primary">Reset</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-block btn-primary" onclick="initArray();">Randomize
+                        dataset</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="form-row">
+            <div class="col row">
+                <strong class="col-8">Iterations</strong>
+                <div id="Iterations" class="col-4" style="border: 1px solid">0</div>
+            </div>
+
+            <div class="col row">
+                <strong class="col-8">Swaps</strong>
+                <div id="Swaps" class="col-4" style="border: 1px solid">0</div>
+            </div>
+            <div class="col row">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div id="Bars" class="row" style="padding-top: 10%;">
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar0" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar1" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar2" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar3" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar4" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar5" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar6" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar7" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar8" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="progress">
+                    <div id="Bar9" class="progress-bar bg-info" role="progressbar"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div id="Elements" class="row" style="padding-top: 5%;">
+            <div id="Element0" class="col"></div>
+            <div id="Element1" class="col"></div>
+            <div id="Element2" class="col"></div>
+            <div id="Element3" class="col"></div>
+            <div id="Element4" class="col"></div>
+            <div id="Element5" class="col"></div>
+            <div id="Element6" class="col"></div>
+            <div id="Element7" class="col"></div>
+            <div id="Element8" class="col"></div>
+            <div id="Element9" class="col"></div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/SortAlgorithms.js"></script>
+</body>
+
+</html>

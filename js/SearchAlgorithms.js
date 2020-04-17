@@ -1,9 +1,7 @@
 var arr = [];
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+
 function initArray() {
-    arr = generateArray();
+    arr = generateArray(15, 1000);
     document.getElementById("Arrows").innerHTML="";
     document.getElementById("Iterations").innerHTML="";
     document.getElementById("BinaryDesc").style.display = "none";
@@ -52,20 +50,6 @@ function generateArrow(id, iteration, isFound = false) {
     document.getElementById("Iteration" + id).innerHTML = iteration;
 }
 
-function getRandomInt() {
-    return Math.floor(Math.random() * Math.floor(1000));
-}
-
-function generateArray() {
-    let array = [];
-    for (let count = 0; count < 15; count++) {
-        array.push(getRandomInt());
-    }
-    return (array.sort(function(a, b) {
-        return a - b;
-    }));
-}
-
 async function linearSearch(elToFind) {
     for (var i = 0; i < arr.length; i++) {
         generateArrow(i, i+1);
@@ -96,9 +80,11 @@ async function binarySearch(elToFind) {
         await sleep(1000);
     } return null;
 }
+
 document.getElementById("UserInput").addEventListener("submit",async function (event) {
     event.preventDefault();
     generateArrowAndIterationDiv();
+    updateButtonState();
     let elemToFind = document.getElementById("SearchItem").value;
     document.getElementById("SearchingItem").innerText = elemToFind;
     let Algo = document.getElementById("Algo").value;
@@ -118,6 +104,7 @@ document.getElementById("UserInput").addEventListener("submit",async function (e
         FoundResult = "Found";
         FoundIndex = result;
     }
+    updateButtonState(false);
     document.getElementById("ItemIndex").innerText = FoundIndex;
     document.getElementById("Result").innerText = FoundResult;
 });
